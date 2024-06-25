@@ -29,6 +29,7 @@ internal class BackgroundJob : IHostedService, IDisposable
     {
         _logger.LogInformation("Disposing timer object...");
         _timer.Dispose();
+        //GC.SuppressFinalize(this); //This is use to prevent memory
     }
 
     private async void ShoutMessage(object? state)
